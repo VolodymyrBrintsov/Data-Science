@@ -30,3 +30,36 @@ prop_t2
 #3d table
 t3 <- prop.table(table(Year=df$years_in_uni, Field=df$field, Status=df$status))
 t3
+
+
+#Plots of table
+barplot(t1)
+barplot(t2, legend.text = T, beside=T)
+
+mosaicplot(t2)
+
+#Geom_barplot
+mydata <- as.data.frame(HairEyeColor)
+obj <- ggplot(data = mydata, aes(x = Hair, y = Freq, fill = Eye)) + 
+  geom_bar(stat="identity", position = "dodge") + 
+  scale_fill_manual(values=c("Brown", "Blue", "Darkgrey", "Darkgreen"))
+
+#Binomial test
+binom.test(t1)
+
+#Chi2 Test
+## for dim = , 2
+chisq.test(t1)
+chi <- chisq.test(t1)
+chi$obs
+chi$exp
+
+## for dim = 2, 5
+chisq.test(t2)
+
+#fisher exact test
+fisher.test(t2)
+
+
+
+
