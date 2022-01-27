@@ -45,8 +45,11 @@ summary(inter_fit)
 ##Confindence interval for linear reg
 confint(inter_fit)
 
-
-
+#Model Selection
+df <- data.frame(swiss)
+full_model <- lm(Fertility ~., df)
+optimal_fit <- step(full_model, direction = "backward")
+summary(optimal_fit)
 
 
 
