@@ -51,5 +51,5 @@ continues_plot + geom_histogram(aes(color = sex), fill = "white",
                    position = "dodge") 
 
 # stat_qq(): quantile - quantile plot
-ggplot(df, aes(sample=weight)) + stat_qq()
+ggplot(df, aes(sample=weight))) + stat_qq()
 
